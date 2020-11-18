@@ -16,7 +16,38 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/custom/custom.css">
 
-    <!-- Fontawsome -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Logikal Supply Localhost"
+        content="15889612183-0ju8lmil439mo5qbr2guveu2il1h45pe.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <script>
+        var googleUser = {};
+        var startApp = function () {
+            gapi.load('auth2', function () {
+                // Retrieve the singleton for the GoogleAuth library and set up the client.
+                auth2 = gapi.auth2.init({
+                    client_id: '15889612183-0ju8lmil439mo5qbr2guveu2il1h45pe.apps.googleusercontent.com',
+                    cookiepolicy: 'single_host_origin',
+                    // Request scopes in addition to 'profile' and 'email'
+                    //scope: 'additional_scope'
+                });
+                attachSignin(document.getElementById('google'));
+            });
+        };
+
+        function attachSignin(element) {
+            console.log(element.id);
+            auth2.attachClickHandler(element, {},
+                function (googleUser) {
+                    sessionStorage.setItem("name", googleUser.getBasicProfile().getName());
+                    window.location.href = "register.html";
+                    // document.getElementById('name').innerText = "Signed in: " +
+                    //     googleUser.getBasicProfile().getName();
+                }, function (error) {
+                    alert(JSON.stringify(error, undefined, 2));
+                });
+        }
+    </script>
 
 
     <title>Hello, world!</title>
@@ -38,9 +69,13 @@
                         <i class="fas fa-user icon-nav"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">My Order</a>
+                        <a class="dropdown-item" href="orders.html">My Order</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Login</a>
+                        <a class="dropdown-item" href="#" id="google">Login</a>
+                        <div id="identity" hidden></div>
+                        <script>
+                            startApp();
+                        </script>
                         <a class="dropdown-item" href="#">Logout</a>
                     </div>
                 </li>
