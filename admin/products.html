@@ -147,34 +147,35 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <a href="#" class="btn btn-success float-right mb-3">Tambah Pesanan</a>
+                                            <a href="#" class="btn btn-success float-right mb-3" data-toggle="modal"
+                                                data-target="#modaladdproduct">Add Product</a>
                                         </div>
                                     </div>
                                     <table id="tabel-orders" class="table table-bordered table-hover">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Orders Code</th>
-                                                <th>Buyer</th>
-                                                <th>Phone</th>
-                                                <th>Address</th>
-                                                <th>Total Price</th>
-                                                <th>Status</th>
+                                                <th>Image</th>
+                                                <th>Name</th>
+                                                <th>Price</th>
+                                                <th>Stock</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>9048572390857</td>
-                                                <td>Andri Rahmanto</td>
-                                                <td>08123487345</td>
-                                                <td>Jalan Kramat Sentiong</td>
-                                                <td>Rp 393.000</td>
-                                                <td>In Shipping</td>
+                                                <td>
+                                                    <img class="img-fluid" style="width: 100px;"
+                                                        src="../assets/image/1604991081160.jpg" alt="">
+                                                </td>
+                                                <td>'Lost Struggle' T-shirt (balck)</td>
+                                                <td>Rp 189.000</td>
+                                                <td>12 pcs</td>
                                                 <td>
                                                     <div class="btn-group">
-                                                        <a href="#" class="btn btn-primary btn-sm"><i
+                                                        <a href="#" class="btn btn-primary btn-sm" data-toggle="modal"
+                                                            data-target="#modaleditproduct"><i
                                                                 class="fas fa-edit"></i></a>
                                                         <a href="#" class="btn btn-danger btn-sm"
                                                             onclick="return confirm('Apakah Anda yakin ingin menghapus pesanan ini?')"><i
@@ -184,18 +185,20 @@
                                             </tr>
                                             <tr>
                                                 <td>1</td>
-                                                <td>1493857619857</td>
-                                                <td>Zaidan Pratama</td>
-                                                <td>0812382379</td>
-                                                <td>Jalan Cempaka Putih</td>
-                                                <td>Rp 193.000</td>
-                                                <td>In Shipping</td>
+                                                <td>
+                                                    <img class="img-fluid" style="width: 100px;"
+                                                        src="../assets/image/1604991081160.jpg" alt="">
+                                                </td>
+                                                <td>'Lost Struggle' T-shirt (balck)</td>
+                                                <td>Rp 189.000</td>
+                                                <td>12 pcs</td>
                                                 <td>
                                                     <div class="btn-group">
-                                                        <a href="#" class="btn btn-primary btn-sm"><i
+                                                        <a href="#" class="btn btn-primary btn-sm" data-toggle="modal"
+                                                            data-target="#modaleditproduct"><i
                                                                 class="fas fa-edit"></i></a>
                                                         <a href="#" class="btn btn-danger btn-sm"
-                                                            onclick="return confirm('Apakah Anda yakin ingin menghapus pesanan ini?')"><i
+                                                            onclick="return confirm('Apakah Anda yakin ingin menghapus barang ini?')"><i
                                                                 class="fas fa-trash-alt"></i></a>
                                                     </div>
                                                 </td>
@@ -232,6 +235,121 @@
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
+
+    <!-- add Modal -->
+    <div class="modal fade" id="modaladdproduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-lg">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add Product</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?= base_url(); ?>/admin/addadmin" method="post" class="user"
+                        enctype="multipart/form-data">
+                        <!-- name -->
+                        <div class="form-group">
+                            <label>Name</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <!-- Price -->
+                        <div class="form-group">
+                            <label>Price</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <!-- Stock -->
+                        <div class="form-group">
+                            <label>Stock</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <!-- image -->
+                        <div class="form-group">
+                            <label>Image</label>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <input type="file" name="file_upload" id="" required>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Add Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end add modal -->
+
+    <!-- edit Modal -->
+    <div class="modal fade" id="modaleditproduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-lg">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Product</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post" class="user" enctype="multipart/form-data">
+                        <div class="row justify-content-center">
+                            <div class="col-8">
+                                <img src="../assets/image/1604991081160.jpg" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                        <!-- image -->
+                        <div class="form-group">
+                            <label>Image</label>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <input type="file" name="file_upload" id="" required>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- name -->
+                        <div class="form-group">
+                            <label>Name</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" required
+                                    value="'Lost Struggle' T-shirt (Black)">
+                            </div>
+                        </div>
+                        <!-- Price -->
+                        <div class="form-group">
+                            <label>Price</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" required value="189000">
+                            </div>
+                        </div>
+                        <!-- Stock -->
+                        <div class="form-group">
+                            <label>Stock</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" required value="12">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save Change</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end edit modal -->
 
     <!-- jQuery -->
     <script src="../assets/adminlte/plugins/jquery/jquery.min.js"></script>

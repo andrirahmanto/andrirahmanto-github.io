@@ -139,7 +139,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3>Table Products</h3>
+                                    <h3>Table Account Admin</h3>
                                 </div>
                                 <!-- /.card-header -->
 
@@ -147,34 +147,30 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <a href="#" class="btn btn-success float-right mb-3">Tambah Pesanan</a>
+                                            <a href="#" class="btn btn-success float-right mb-3" data-toggle="modal"
+                                                data-target="#modaladdaccount">Add Account Admin</a>
                                         </div>
                                     </div>
-                                    <table id="tabel-orders" class="table table-bordered table-hover">
+                                    <table id="tabel-admin" class="table table-bordered table-hover">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Orders Code</th>
-                                                <th>Buyer</th>
-                                                <th>Phone</th>
-                                                <th>Address</th>
-                                                <th>Total Price</th>
-                                                <th>Status</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Password</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>9048572390857</td>
                                                 <td>Andri Rahmanto</td>
-                                                <td>08123487345</td>
-                                                <td>Jalan Kramat Sentiong</td>
-                                                <td>Rp 393.000</td>
-                                                <td>In Shipping</td>
+                                                <td>andrirahmanto@test.com</td>
+                                                <td>andri123</td>
                                                 <td>
                                                     <div class="btn-group">
-                                                        <a href="#" class="btn btn-primary btn-sm"><i
+                                                        <a href="#" class="btn btn-primary btn-sm" data-toggle="modal"
+                                                            data-target="#modaleditaccount"><i
                                                                 class="fas fa-edit"></i></a>
                                                         <a href="#" class="btn btn-danger btn-sm"
                                                             onclick="return confirm('Apakah Anda yakin ingin menghapus pesanan ini?')"><i
@@ -182,18 +178,38 @@
                                                     </div>
                                                 </td>
                                             </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>Table Account User</h3>
+                                </div>
+                                <!-- /.card-header -->
+
+
+                                <div class="card-body">
+                                    <div class="row">
+                                    </div>
+                                    <table id="tabel-user" class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>1493857619857</td>
                                                 <td>Zaidan Pratama</td>
-                                                <td>0812382379</td>
-                                                <td>Jalan Cempaka Putih</td>
-                                                <td>Rp 193.000</td>
-                                                <td>In Shipping</td>
+                                                <td>zaidanprtm@test.com</td>
                                                 <td>
                                                     <div class="btn-group">
-                                                        <a href="#" class="btn btn-primary btn-sm"><i
-                                                                class="fas fa-edit"></i></a>
                                                         <a href="#" class="btn btn-danger btn-sm"
                                                             onclick="return confirm('Apakah Anda yakin ingin menghapus pesanan ini?')"><i
                                                                 class="fas fa-trash-alt"></i></a>
@@ -232,6 +248,100 @@
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
+
+    <!-- add Modal -->
+    <div class="modal fade" id="modaladdaccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-lg">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add Account Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?= base_url(); ?>/admin/addadmin" method="post" class="user"
+                        enctype="multipart/form-data">
+                        <!-- nama -->
+                        <div class="form-group">
+                            <label>Nama</label>
+                            <div class="input-group mb-3">
+                                <input name="admin_name" type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <!-- email -->
+                        <div class="form-group">
+                            <label>Email</label>
+                            <div class="input-group mb-3">
+                                <input name="admin_email" type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <!-- password -->
+                        <div class="form-group">
+                            <label>Password</label>
+                            <div class="input-group mb-3">
+                                <input name="admin_password" type="password" class="form-control" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Add Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end add modal -->
+
+    <!-- edit Modal -->
+    <div class="modal fade" id="modaleditaccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-lg">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Account Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?= base_url(); ?>/admin/addadmin" method="post" class="user"
+                        enctype="multipart/form-data">
+                        <!-- nama -->
+                        <div class="form-group">
+                            <label>Name</label>
+                            <div class="input-group mb-3">
+                                <input name="admin_name" type="text" class="form-control" required
+                                    value="Andri Rahmanto">
+                            </div>
+                        </div>
+                        <!-- email -->
+                        <div class="form-group">
+                            <label>Email</label>
+                            <div class="input-group mb-3">
+                                <input name="admin_email" type="text" class="form-control" required
+                                    value="andrirahmanto@test.com">
+                            </div>
+                        </div>
+                        <!-- password -->
+                        <div class="form-group">
+                            <label>Password</label>
+                            <div class="input-group mb-3">
+                                <input name="admin_password" type="text" class="form-control" required value="andri123">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save Change</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end edit modal -->
 
     <!-- jQuery -->
     <script src="../assets/adminlte/plugins/jquery/jquery.min.js"></script>
@@ -275,7 +385,11 @@
 
     <script>
         $(document).ready(function () {
-            $('#tabel-orders').DataTable({
+            $('#tabel-admin').DataTable({
+                "responsive": true,
+                "autoWidth": false,
+            });
+            $('#tabel-user').DataTable({
                 "responsive": true,
                 "autoWidth": false,
             });

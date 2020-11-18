@@ -146,9 +146,6 @@
 
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col">
-                                            <a href="#" class="btn btn-success float-right mb-3">Tambah Pesanan</a>
-                                        </div>
                                     </div>
                                     <table id="tabel-orders" class="table table-bordered table-hover">
                                         <thead>
@@ -174,7 +171,8 @@
                                                 <td>In Shipping</td>
                                                 <td>
                                                     <div class="btn-group">
-                                                        <a href="#" class="btn btn-primary btn-sm"><i
+                                                        <a href="#" class="btn btn-primary btn-sm" data-toggle="modal"
+                                                            data-target="#modaleditorder"><i
                                                                 class="fas fa-edit"></i></a>
                                                         <a href="#" class="btn btn-danger btn-sm"
                                                             onclick="return confirm('Apakah Anda yakin ingin menghapus pesanan ini?')"><i
@@ -192,7 +190,8 @@
                                                 <td>In Shipping</td>
                                                 <td>
                                                     <div class="btn-group">
-                                                        <a href="#" class="btn btn-primary btn-sm"><i
+                                                        <a href="#" class="btn btn-primary btn-sm" data-toggle="modal"
+                                                            data-target="#modaleditorder"><i
                                                                 class="fas fa-edit"></i></a>
                                                         <a href="#" class="btn btn-danger btn-sm"
                                                             onclick="return confirm('Apakah Anda yakin ingin menghapus pesanan ini?')"><i
@@ -232,6 +231,182 @@
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
+
+    <!-- edit Modal -->
+    <div class="modal fade" id="modaleditorder" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content modal-lg">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Order</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?= base_url(); ?>/admin/sendupdatepesanan" method="post" class="user"
+                        enctype="multipart/form-data">
+                        <h3>User</h3>
+                        <!-- nama user -->
+                        <div class="form-group">
+                            <label>Name</label>
+                            <div class="input-group mb-3">
+                                <input name="user_name" type="text" class="form-control" value="Andri Rahmanto" required
+                                    disabled>
+                            </div>
+                        </div>
+                        <!-- email user -->
+                        <div class="form-group">
+                            <label>Email</label>
+                            <div class="input-group mb-3">
+                                <input name="user_name" type="text" class="form-control" value="andrirahmanto@test.com"
+                                    required disabled>
+                            </div>
+                        </div>
+                        <br>
+                        <h3>Product</h3>
+                        <!-- Foto barang -->
+                        <div class="row">
+                            <div class="col-4">
+                                <img class="img-fluid" src="../assets/image/1604991081160.jpg" alt="">
+                                <input name="product_last_image" type="text" class="form-control" value="" hidden>
+                            </div>
+                            <div class="col-8">
+                                <!-- nama barang -->
+                                <div class="form-group">
+                                    <label>Product</label>
+                                    <div class="input-group mb-3">
+                                        <input name="product_name" type="text" class="form-control"
+                                            value="'Lost Struggle' T-shirt (black)" required disabled>
+                                    </div>
+                                </div>
+                                <!-- harga -->
+                                <div class="form-group">
+                                    <label>Price</label>
+                                    <div class="input-group mb-3">
+                                        <input name="product_price" type="text" class="form-control" value="Rp 189.000"
+                                            required disabled>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <!-- Size -->
+                                        <div class="form-group">
+                                            <label>Size</label>
+                                            <div class="input-group mb-3">
+                                                <input name="pesanan_size" type="text" class="form-control" value="XL"
+                                                    required disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <!-- Jumlah -->
+                                        <div class="form-group">
+                                            <label>Amount</label>
+                                            <div class="input-group mb-3">
+                                                <input name="pesanan_amount" type="text" class="form-control" value="1"
+                                                    required disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Detail Pesanan -->
+                        <br>
+                        <h3>Order Detail</h3>
+                        <!-- Pesanan Key -->
+                        <div class="form-group">
+                            <label>Order Code</label>
+                            <div class="input-group mb-3">
+                                <input name="pesanan_key" type="text" class="form-control" value="90983475908" required
+                                    disabled>
+                            </div>
+                        </div>
+                        <!-- Nomer Telepon -->
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <div class="input-group mb-3">
+                                <input name="pesanan_numberphone" type="text" class="form-control" value="08234781264"
+                                    required disabled>
+                            </div>
+                        </div>
+                        <!-- Alamat Kirim -->
+                        <div class="form-group">
+                            <label>Address</label>
+                            <div class="input-group mb-3">
+                                <input name="pesanan_address" type="text" class="form-control"
+                                    value="Jl Kramat Sentiong" required disabled>
+                            </div>
+                        </div>
+                        <!-- Harga Ongkir -->
+                        <div class="form-group">
+                            <label>Shipping Price</label>
+                            <div class="input-group mb-3">
+                                <input name="pesanan_ongkir" type="text" class="form-control" value="Rp 10.000" required
+                                    disabled>
+                            </div>
+                        </div>
+                        <!-- Harga total -->
+                        <div class="form-group">
+                            <label>Total Price</label>
+                            <div class="input-group mb-3">
+                                <input name="pesanan_total_price" type="text" class="form-control" value="Rp 199.000"
+                                    required disabled>
+                            </div>
+                        </div>
+                        <!-- Status Pesanan -->
+                        <br>
+                        <h3>Status Pesanan</h3>
+                        <!-- Status Pesanan -->
+                        <div class="form-group">
+                            <label>Order Status</label>
+                            <select class="custom-select" name='pesanan_status'>
+                                <option class="box" disabled>-- Select Status --</option>
+                                <option class="box" value="Waiting For Confirmation">Waiting For Confirmation</option>
+                                <option class="box" value="Processed">Processed</option>
+                                <option class="box" selected value="In Shipping">In Shipping</option>
+                                <option class="box" value="Canceled">Canceled</option>
+                            </select>
+                        </div>
+                        <!-- Metode Pembayaran -->
+                        <div class="form-group">
+                            <label>Payment Method</label>
+                            <select class="custom-select" name='pesanan_payment_method'>
+                                <option class="box" disabled value="">-- Select Payment Method --</option>
+                                <option class="box">Bank Transfer</option>
+                                <option class="box" selected>OVO</option>
+                                <option class="box">DANA</option>
+                            </select>
+                        </div>
+                        <!-- Status Pembayaran -->
+                        <div class="form-group">
+                            <label>Payment Status</label>
+                            <select class="custom-select" name='pesanan_payment'>
+                                <option class="box" disabled>-- Select Payment Status --</option>
+                                <option class="box" selected value="Waiting">Waiting</option>
+                                <option class="box" selected value="Paid">Paid</option>
+                            </select>
+                        </div>
+                        <!-- Bukti Pembayaran -->
+                        <div class="form-group">
+                            <label>Payment Image</label><br>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-4 col-sm-6 col-8">
+                                    <img class="img-fluid" src="../assets/image/bukti.jpeg" alt="#">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save Change</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end edit modal -->
 
     <!-- jQuery -->
     <script src="../assets/adminlte/plugins/jquery/jquery.min.js"></script>
