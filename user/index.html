@@ -5,18 +5,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../assets/custom/custom.css">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="Logikal Supply Localhost"
         content="15889612183-0ju8lmil439mo5qbr2guveu2il1h45pe.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/api:client.js"></script>
@@ -40,7 +28,7 @@
             auth2.attachClickHandler(element, {},
                 function (googleUser) {
                     sessionStorage.setItem("name", googleUser.getBasicProfile().getName());
-                    window.location.href = "register.html";
+                    window.location.href = "index.html";
                     // document.getElementById('name').innerText = "Signed in: " +
                     //     googleUser.getBasicProfile().getName();
                 }, function (error) {
@@ -48,6 +36,17 @@
                 });
         }
     </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/custom/custom.css">
+
 
 
     <title>Hello, world!</title>
@@ -71,11 +70,13 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="orders.html">My Order</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#" id="google">Login</a>
-                        <div id="identity" hidden></div>
-                        <script>
-                            startApp();
-                        </script>
+                        <div>
+                            <a class="dropdown-item" href="#" id="google">Login</a>
+                            <div id="identity" hidden></div>
+                            <script>
+                                startApp();
+                            </script>
+                        </div>
                         <a class="dropdown-item" href="#">Logout</a>
                     </div>
                 </li>
@@ -246,6 +247,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
 
 </html>
