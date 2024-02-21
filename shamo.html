@@ -29,84 +29,62 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#page-top">My Portofolio</a>
+            <a class="navbar-brand" href="javascript:history.back()"><i class="fas fa-arrow-left ml-30px"></i></a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Project</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:history.back()">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:history.back()">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:history.back()">Project</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:history.back()">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- Masthead-->
-    <header class="masthead">
-        <div class="container px-4 px-lg-5 h-100">
-            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-                <div class="col-lg-8 align-self-end">
-                    <img src="assets/img/profile/andri2.png" alt="" width="25%" style="border-radius: 100%;">
-                    <h1 class="text-white font-weight-bold">I'm Andri Rahmanto</h1>
-                    <h3 class="text-white font-weight-bold">Mobile and Website Developer </h3>
-                    <hr class="divider" />
-                </div>
-                <div class="col-lg-8 align-self-baseline">
-                    <p class="text-white-75 mb-3">I love and motivated to create a application to facilitate the work of
-                        many
-                        people</p>
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8 col-md-10 col-sm-12">
-                            <div class="d-flex flex-row justify-content-around">
-                                <a href="mailto:andrirahmanto.r@gmail.com">
-                                    <div class="mb-2"><i class="fab fa-google fs-2 icon-social"></i></i></div>
-                                </a>
-                                <a href="https://www.linkedin.com/in/andrirahmanto" target="_balnk">
-                                    <div class="mb-2"><i class="fab fa-linkedin fs-2 icon-social"></i></i></div>
-                                </a>
-                                <a href="https://github.com/andrirahmanto" target="_balnk">
-                                    <div class="mb-2"><i class="fab fa-github fs-2 icon-social"></i></i></div>
-                                </a>
-                                <a href="https://www.instagram.com/andrirhmnt/" target="_balnk">
-                                    <div class="mb-2"><i class="fab fa-instagram fs-2 icon-social"></i></i></div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-8 col-sm-10">
-                            <div class="d-flex flex-row justify-content-around">
-                                <a class="btn btn-primary btn-xl"
-                                    onclick="document.location='assets/cv/cv_andri_rahmanto.pdf'"
-                                    target="_blank">Download
-                                    CV</a>
-                                <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- <header class="masthead">
+
+    </header> -->
     <!-- About-->
     <section class="page-section bg-primary" id="about">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="text-white mt-0">About Me</h2>
-                    <hr class="divider divider-light" />
-                    <p class="text-white-75 mb-4">I am Andri Rahmanto, a Computer Science graduate from Jakarta State
-                        University. With a robust background as a mobile and website developer in startup
-                        environments, limited liability companies, and various personal projects within the software
-                        engineering realm, I've cultivated a deep-rooted passion for software development. My career
-                        aspirations span across roles as a software developer, software engineer, data scientist, and
-                        product management, seeking to contribute innovative solutions and drive impactful change within
-                        the tech landscape.</p>
-                    <a class="btn btn-light btn-xl" href="#services">More about my skill</a>
+        <div class="container-sm" style="background-color: blueviolet;">
+            <div id="portfolio-shamo" class="carousel slide" data-bs-ride="carousel" margin: 0;">
+                <div class="carousel-inner h-100" style="max-height: 500px;">
+                    <div class="carousel-item active">
+                        <a class="portfolio-box" href="assets/img/shamo/pic1.png" title="Shamo (Personal Project)">
+                            <img class="img-fluid" src="assets/img/shamo/pic1.png" alt="..." />
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a class="portfolio-box" href="assets/img/shamo/pic2.png" title="Shamo (Personal Project)">
+                            <img class="img-fluid" src="assets/img/shamo/pic2.png" alt="..." />
+                        </a>
+                    </div>
+                    <!-- Repeat the above structure for other items -->
                 </div>
+
+                <!-- Add navigation arrows if needed -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#portfolio-shamo"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#portfolio-shamo"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
+        </div>
     </section>
+    <!-- Test-->
+    <!-- <section class="content" id="content">
+        <div class="container-fluid" style="background-color: brown,;"></div>
+    </section> -->
+    <!-- Test-->
     <!-- Services-->
     <section class="page-section" id="services">
         <div class="container px-4 px-lg-5">
@@ -250,7 +228,7 @@
                             <p class="card-text">Shamo is an e-commerce application for shoe sales
                                 and chat between buyers and sellers.
                             </p>
-                            <a href="/shamo.html" class="btn btn-primary">
+                            <a href="#" class="btn btn-primary">
                                 Detail
                                 <i class="fas fa-arrow-right ml-30px"></i>
                             </a>
